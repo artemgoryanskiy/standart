@@ -1,0 +1,78 @@
+{% extends 'app_prof_dev/base.html' %}
+
+{% block title %}Главная{% endblock title %}
+
+{% block content %}
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="media/nav_menu/main_study.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Обучение</h5>
+                    <div class="list-group">
+                        <a href="{% url 'app_prof_dev:category_list' %}" class="list-group-item list-group-item-action active" aria-current="true">
+                            Повышение квалификации
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">Профессиональная переподготовка</a>
+                        <a href="#" class="list-group-item list-group-item-action">Профессиональное обучение</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="media/nav_menu/main_ot.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Охрана труда</h5>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                            Аутсорсинг по охране труда
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">Разаработка документов по охране труда</a>
+                        <a href="#" class="list-group-item list-group-item-action">Оценка профессиональных рисков</a>
+                        <a href="#" class="list-group-item list-group-item-action">СОУТ</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="media/nav_menu/main_eco.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Экология</h5>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                            Паспорта отходов
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">Инвентаризация выбросов</a>
+                        <a href="#" class="list-group-item list-group-item-action">Постановка на госучет</a>
+                        <a href="#" class="list-group-item list-group-item-action">НМУ</a>
+                        <a href="#" class="list-group-item list-group-item-action">Проект НДВ</a>
+                        <a href="#" class="list-group-item list-group-item-action">Отчетность</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="media/nav_menu/transport_safety.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Транспортная безопасность</h5>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                            Паспорта отходов
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">Инвентаризация выбросов</a>
+                        <a href="#" class="list-group-item list-group-item-action">Постановка на госучет</a>
+                        <a href="#" class="list-group-item list-group-item-action">НМУ</a>
+                        <a href="#" class="list-group-item list-group-item-action">Проект НДВ</a>
+                        <a href="#" class="list-group-item list-group-item-action">Отчетность</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

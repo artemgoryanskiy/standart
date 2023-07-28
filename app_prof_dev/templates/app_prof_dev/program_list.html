@@ -1,0 +1,14 @@
+{% extends 'app_prof_dev/base.html' %}
+{% block title %}{{ category.title }}{% endblock title %}
+{% block content %}
+    {% for program in programs %}
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ program.title }}</h5>
+                </div>
+                <p class="mb-1">Количество часов: {{ program.hours }}</p>
+            </a>
+        </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'app_prof_dev/base.html' %}
+
+{% block content %}
+
+{% for post in posts %}
+    {{ post.title }}
+    <img src="{{ post.image.url }}" alt="">
+    {{ post.body }}
+
+
+    {% endfor %}
+{% endblock content %}

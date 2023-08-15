@@ -23,7 +23,7 @@ class CategoryProfTrain(models.Model):
 class ProgramProfTrain(models.Model):
     code_num = models.CharField(max_length=15)
     title = models.CharField(max_length=200)
-    class_num = models.CharField(max_length=10)
+    class_num = models.CharField(max_length=50)
     slug = models.SlugField(null=False, max_length=100)
     category = models.ForeignKey(CategoryProfTrain, on_delete=models.CASCADE, default=1, related_name='programs')
 

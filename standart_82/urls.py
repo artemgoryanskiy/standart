@@ -22,8 +22,14 @@ from app_prof_dev.views import main_page_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_page_view, name='main'),
-    path('learning/', include('app_prof_dev.urls')),
+    path('study/', include('app_prof_dev.urls')),
+    # path('professional-development/', include('app_prof_dev.urls')),
+    path('study/professional-retraining/', include('app_prof_retraining.urls')),
+    path('study/professional-training/', include('app_prof_training.urls')),
     path('news/', include('app_news.urls')),
+    path('ecology/', include('app_ecology.urls')),
+    path('labor-protection/', include('app_lab_prot.urls')),
+    path('about-us/', include('app_about_us.urls')),
 ]
 
 

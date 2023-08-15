@@ -1,0 +1,60 @@
+{% extends 'app_prof_dev/base.html' %}
+{% block title %}Обучение{% endblock title %}
+
+{% block content %}
+    <div class="container-fluid">
+        <main>
+            <div class="container px-4 py-4">
+                <h1 class="visually-hidden">Обучение</h1>
+                <div class="container-flex px-4 py-2" id="featured-3">
+                    <h2 class="pb-2 border-bottom">Обучение</h2>
+                    <div class="row g-4 py-4 row-cols-1 row-cols-lg-3">
+
+                        <div class="feature col px-3">
+                            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                                <img src="/media/category_img/prof_dev.jpg" height="150" alt="">
+                            </div>
+                            <h3 class="fs-2 text-body-emphasis">Повышение квалификации</h3>
+                            <p>Это вид дополнительного профессионального образования работников предприятия, которое
+                                проводится с целью
+                                повышения уровня теоретических знаний, совершенствования практических навыков и умений
+                                сотрудников организации в связи
+                                с постоянно повышающимися требованиями к их квалификации.</p>
+                            <a href="{% url 'app_prof_dev:category_list' %}" class="icon-link">
+                                Перейти
+                            </a>
+                        </div>
+
+                        <div class="feature col">
+                            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                                <img src="/media/category_img/prof_retr.jpg" height="150" alt="">
+                            </div>
+                            <h3 class="fs-2 text-body-emphasis">Профессиональная переподготовка</h3>
+                            <p>Это вид дополнительного профессионального образования, который позволяет специалисту
+                                сменить свою профессию или специальность.
+                                Другими словами, переподготовка – это сокращенная версия второго высшего или второго
+                                среднего профессионального образования.</p>
+                            <a href="{% url 'app_prof_retraining:category_list' %}" class="icon-link">
+                                Перейти
+                            </a>
+                        </div>
+
+                        <div class="feature col">
+                            <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                                <img src="/media/category_img/prof_train.jpg" height="150" alt="">
+                            </div>
+                            <h3 class="fs-2 text-body-emphasis">Профессиональное обучение</h3>
+                            <p>Это вид образования, который направлен на приобретение обучающимися знаний, умений,
+                                навыков и формирование компетенции,
+                                необходимых для выполнения определенных трудовых, служебных функций (определенных видов
+                                трудовой, служебной деятельности,
+                                профессий).</p>
+                            <a href="{% url 'app_prof_training:category_list' %}" class="icon-link">
+                                Перейти
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+{% endblock content %}

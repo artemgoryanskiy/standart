@@ -1,0 +1,21 @@
+<div class="col-3 d-none d-sm-block">
+
+    <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+        <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+        <button class="btn btn-outline-success" type="submit">Поиск</button>
+    </form>
+        <a class="nav-link active" aria-current="page" href="#">Вход в СДО</a>
+        <a class="nav-link" href="#">Заявка на обучение</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+
+
+        <img src="{{ ad.image.url }}" class="card-img-top" alt="posts_side.title">
+        <div class="card-body">
+            <p class="card-text">{{ ad.title }}</p>
+            <a href="{% url 'app_news:post_detail' ad.pk %}" class="card-link">Читать далее...</a>
+
+        </div>
+    </div>
+</div>

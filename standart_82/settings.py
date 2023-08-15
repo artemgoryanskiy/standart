@@ -39,8 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # installed apps
     'app_prof_dev.apps.AppProfDevConfig',
     'app_news.apps.AppNewsConfig',
+    'app_prof_retraining.apps.AppProfRetrainingConfig',
+    'app_prof_training.apps.AppProfTrainingConfig',
+    'app_ecology.apps.AppEcologyConfig',
+    'app_lab_prot.apps.AppLabProtConfig',
+    'app_about_us.apps.AppAboutUsConfig',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

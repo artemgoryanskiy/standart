@@ -1,6 +1,20 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
+from django.template.defaultfilters import slugify
+
+
+class Category(models.Model):
+    TITLE_CHOICES = (
+        ('news', 'News'),
+        ('ads', 'Ads'),
+    )
+    title = models.CharField(max_length=250, choices=TITLE_CHOICES, default='news')
+    slug = models.SlugField(max_length=250)
+
+    def __str__(self):
+        return self.title
 
 
 class Post(models.Model):
@@ -13,6 +27,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='news_img/', blank=True, null=True)
     body = models.TextField()
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

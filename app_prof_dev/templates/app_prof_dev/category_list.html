@@ -2,20 +2,37 @@
 
 {% block title %}Повышение квалификации{% endblock title %}
 {% block content %}
-    <h3 class="text-primary text-opacity-75 text-start">Повышение квалификации</h3>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        {% for category in categories %}
-            <div class="col">
-                    <div class="card h-100">
-                        <a href="{% url 'app_prof_dev:program_list' category.slug %}"><img src="{{ category.image.url }}" class="card-img-top" alt="{{ category.title }}"></a>
-                        <div class="card-body">
-                            <a class="nav-link" href="{% url 'app_prof_dev:program_list' category.slug %}">{{ category.title }}</a>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">В категории {{ category.programs.count }} программ</small>
+
+<div class="container-fluid p-0">
+    <main>
+        <div class="container px-4 py-4" id="custom-cards">
+            <h2 class="pb-2 border-bottom">Повышение квалификации</h2>
+            <div class="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
+                {% for category in categories %}
+                    <div class="col">
+                        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                             style="background-image: url({{ category.image.url }}); background-size: cover;  background-color: rgba(0,0,0,.0);
+                                     background-blend-mode: difference;">
+                            <div class="d-flex flex-column h-100 p-5 pb-3 text-light text-shadow-1">
+                                <a href="{% url 'app_prof_dev:program_list' category.slug %}"
+                                   class="text-decoration-none link-light"><h3
+                                        class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{ category.title }}</h3></a>
+                                <ul class="d-flex list-unstyled mt-auto">
+                                    <li class="me-auto">
+                                        <img src="/media/nav_menu/Logo.png" alt="Логотип" width="32" height="32"
+                                             class="rounded-circle border border-white">
+                                    </li>
+                                    <li class="d-flex align-items-center me-3">
+                                        <small>В категории {{ category.programs.count }} программ</small>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                {% endfor %}
             </div>
-        {% endfor %}
-    </div>
+        </div>
+    </main>
+</div>
 {% endblock content %}
+

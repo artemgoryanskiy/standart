@@ -1,11 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView
 from .models import Category, Program
+from app_news.models import Post
 
 
 def main_page_view(request):
-    return render(request, 'app_prof_dev/main.html', {})
+    return render(request, 'app_prof_dev/base.html', context={})
 
+
+def main_study_page_view(request):
+    return render(request, 'app_prof_dev/main_study.html', context={})
 
 class CategoryListView(ListView):
     model = Category

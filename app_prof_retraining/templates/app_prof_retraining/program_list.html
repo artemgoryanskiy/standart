@@ -1,0 +1,21 @@
+{% extends 'app_prof_dev/base.html' %}
+{% block title %}{{ category.title }}{% endblock title %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="container px-4 py-4">
+    <h2 class="pb-4 border-bottom">{{ category.title }}</h2>
+        {% for program in programs %}
+        <div class="p-3 py-4 text-center bg-body-tertiary rounded-3 border-bottom">
+            <h4 class="text-body-emphasis">{{ program.title }}</h4>
+            <p class="lead">
+                Количество часов: {{ program.hours }}
+            </p>
+        <p class="lead">
+                Присвоенная квалификация: {{ program.qualification }}
+            </p>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+{% endblock content %}

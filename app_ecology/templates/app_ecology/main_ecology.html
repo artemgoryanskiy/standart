@@ -1,0 +1,90 @@
+{% extends 'app_prof_dev/base.html' %}
+{% block title %}Экология{% endblock title %}
+
+{% block content %}
+    <div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom">Экология</h2>
+        <div class="row g-4 py-3 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="/media/ecology_img/eco_logo.jpg" alt="logo ecology" width="70">
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Паспорта отходов</h3>
+                <a href="{% url 'app_ecology:product_detail' 'pasporta-othodov' %}" class="icon-link">
+                    Перейти
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="/media/ecology_img/eco_logo.jpg" alt="logo ecology" width="70"></div>
+                <h3 class="fs-2 text-body-emphasis">Инвентаризация источников и выбросов загрязняющих веществ</h3>
+                <a href="{% url 'app_ecology:product_detail' 'inventarizaciya-istochnikov-i-vybrosov-zagryaznyayushih-veshestv-v-atmosfernyj-vozduh' %}" class="icon-link">
+                    Перейти
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="/media/ecology_img/eco_logo.jpg" alt="logo ecology" width="70"></div>
+                <h3 class="fs-2 text-body-emphasis">Постановка на учет объектов НВОС</h3>
+                <a href="{% url 'app_ecology:product_detail' 'postanovka-na-uchet-obektov-negativnogo-vozdejstviya-na-okruzhayushuyu-sredu-nvos' %}" class="icon-link">
+                    Перейти
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="/media/ecology_img/eco_logo.jpg" alt="logo ecology" width="70"></div>
+                <h3 class="fs-2 text-body-emphasis">НМУ</h3>
+                <a href="{% url 'app_ecology:product_detail' 'meropriyatiya-po-umensheniyu-vybrosov-zagryaznyayushih-veshestv-v-atmosfernyj-vozduh-v-periody-neblagopriyatnyh-meteorologicheskih-uslovij-nmu' %}" class="icon-link">
+                    Перейти
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="/media/ecology_img/eco_logo.jpg" alt="logo ecology" width="70"></div>
+                <h3 class="fs-2 text-body-emphasis">Проект ПДВ</h3>
+                <a href="{% url 'app_ecology:product_detail' 'proekt-predelno-dopustimyh-vybrosov-v-atmosferu-proekt-pdv' %}" class="icon-link">
+                    Перейти
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="/media/ecology_img/eco_logo.jpg" alt="logo ecology" width="70"></div>
+                <h3 class="fs-2 text-body-emphasis">Экологическая отчетность</h3>
+                <a href="{% url 'app_ecology:product_detail' 'ekologicheskaya-otchetnost' %}" class="icon-link">
+                    Перейти
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -3,7 +3,7 @@ from .models import Category, Program
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('title', 'body', 'slug',)
+    list_display = ('title', 'body', 'slug', 'image',)
     prepopulated_fields = {'slug': ('title',)}
 
 

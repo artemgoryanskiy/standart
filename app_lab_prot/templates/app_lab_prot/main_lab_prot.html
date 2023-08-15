@@ -1,0 +1,71 @@
+{% extends 'app_prof_dev/base.html' %}
+{% block title %}Охрана труда{% endblock title %}
+
+{% block content %}
+  <div class="container px-4 py-5" id="featured-3">
+        <h2 class="pb-2 border-bottom">Охрана труда</h2>
+        <div class="row g-4 py-3 row-cols-1 row-cols-lg-3">
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="/media/labor_prot_img/lab_prot_logo.png" alt="logo ecology" width="70">
+                </div>
+                <h3 class="fs-2 text-body-emphasis">Аутсорсинг по охране труда</h3>
+                <a href="{% url 'app_lab_prot:product_detail' 'autsorsing-po-ohrane-truda' %}" class="icon-link">
+                    Перейти
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </a>
+            </div>
+
+
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="/media/labor_prot_img/lab_prot_logo.png" alt="logo ecology" width="70"></div>
+                <h3 class="fs-2 text-body-emphasis">Разработка комплекта документов по охране труда</h3>
+                <a href="{% url 'app_lab_prot:product_detail' 'razrabotka-komplekta-dokumentov-po-ohrane-truda' %}" class="icon-link">
+                    Перейти
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </a>
+            </div>
+
+
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="/media/labor_prot_img/lab_prot_logo.png" alt="logo ecology" width="70"></div>
+                <h3 class="fs-2 text-body-emphasis">Оценка профессиональных рисков</h3>
+                <a href="{% url 'app_lab_prot:product_detail' 'ocenka-professionalnyh-riskov' %}" class="icon-link">
+                    Перейти
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </a>
+            </div>
+
+
+            <div class="feature col">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                    <img src="/media/labor_prot_img/lab_prot_logo.png" alt="logo ecology" width="70"></div>
+                <h3 class="fs-2 text-body-emphasis">СОУТ</h3>
+                <a href="{% url 'app_lab_prot:product_detail' 'specialnaya-ocenka-uslovij-truda-sout' %}" class="icon-link">
+                    Перейти
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

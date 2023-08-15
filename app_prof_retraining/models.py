@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.template.defaultfilters import slugify
 
 
-class Category(models.Model):
+class CategoryProfRetrain(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField(null=True, blank=True)
     slug = models.SlugField(unique=True, null=False)
@@ -21,8 +21,8 @@ class Category(models.Model):
         return super().save(*args, **kwargs)
 
 
-class Program(models.Model):
-    category = models.ForeignKey(Category, related_name='programs', on_delete=models.CASCADE,
+class ProgramProfRetrain(models.Model):
+    category = models.ForeignKey(CategoryProfRetrain, related_name='programs', on_delete=models.CASCADE,
                                  verbose_name='Выберите категорию')
     title = models.CharField(max_length=500)
     slug = models.SlugField(null=True, max_length=100)

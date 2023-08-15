@@ -1,11 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.urls import reverse
 from django.utils import timezone
-from django.template.defaultfilters import slugify
 
 
-class Category(models.Model):
+class CategoryNews(models.Model):
     TITLE_CHOICES = (
         ('news', 'News'),
         ('ads', 'Ads'),
@@ -17,7 +15,7 @@ class Category(models.Model):
         return self.title
 
 
-class Post(models.Model):
+class PostNews(models.Model):
     STATUS_CHOICES = (
         ('draft', 'Draft'),
         ('published', 'Published'),
@@ -27,7 +25,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='news_img/', blank=True, null=True)
     body = models.TextField()
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True)
+    category = models.ForeignKey(CategoryNews, on_delete=models.CASCADE, blank=True, null=True)
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

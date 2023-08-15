@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product
+from .models import ProductEco
 
 
 class AdminProduct(admin.ModelAdmin):
@@ -7,4 +7,4 @@ class AdminProduct(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
 
-admin.site.register(Product, AdminProduct)
+admin.site.register(ProductEco, AdminProduct)

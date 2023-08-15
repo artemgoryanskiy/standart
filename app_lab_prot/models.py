@@ -3,7 +3,7 @@ from django.template.defaultfilters import slugify
 from django.urls import reverse
 
 
-class Product(models.Model):
+class ProductLabProt(models.Model):
     title = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250, unique=True, null=False)
     body = models.TextField()

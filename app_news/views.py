@@ -1,17 +1,17 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
-from .models import Post
+from .models import PostNews
 
 
 class PostListView(ListView):
-    model = Post
+    model = PostNews
     context_object_name = 'posts'
     template_name = 'app_news/news_list.html'
 
 
 class PostDetailView(DetailView):
-    model = Post
+    model = PostNews
     context_object_name = 'post'
     template_name = 'app_news/news_detail.html'
 

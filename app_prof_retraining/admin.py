@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Program
+from .models import CategoryProfRetrain, ProgramProfRetrain
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -12,5 +12,5 @@ class ProgramAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
 
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Program, ProgramAdmin)
+admin.site.register(CategoryProfRetrain, CategoryAdmin)
+admin.site.register(ProgramProfRetrain, ProgramAdmin)

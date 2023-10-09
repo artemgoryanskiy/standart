@@ -1,0 +1,127 @@
+{% extends 'index.html' %}
+{% block title %}{{ category.title }}{% endblock title %}
+{% block content %}
+<main id="main">
+  <!-- Hero -->
+  <div class="position-relative d-flex align-items-center text-white min-vh-75 overflow-hidden" style="background: linear-gradient(360deg, #066ac9 0%, #064f8a 100%)">
+      <div class="container mb-5 py-5">
+      <div class="col-lg-10 text-center mx-auto">
+        <h1 class="display-4 mb-4">{{ category.title }}</h1>
+        <p class="lead">{{ category.short_desc }}</p>
+        <a class="btn btn-light btn-lg rounded-pill" href="#">Подать заявку</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-3 pt-lg-4">
+    <div class="row justify-content-around align-items-center gy-4">
+      <div class="col-md-8 col-xl-7">
+        <h2>О курсах категории</h2>
+        <p class="lead"><span class="fw-bold">Цель обучения: </span>{{ category.purpose }}</p>
+        <p><span class="fw-bold">Категория слушателей: </span>{{ category.audience_category }}</p>
+      </div>
+
+      <div class="col-md-4 col-xl-3">
+        <aside class="bg-white shadow rounded text-center">
+          <dl class="mb-0">
+            <dt class="fw-light text-uppercase mb-2 pt-4">Форма обучения</dt>
+            <dd class="h4 border-bottom mb-0 pb-4">очная, очно-заочная, заочная</dd>
+            <dt class="fw-light text-uppercase mb-2 pt-4">Количество программ:</dt>
+            <dd class="h4 border-bottom mb-0 pb-4">{{ category.programs.count }}</dd>
+            <dt class="fw-light text-uppercase mb-2 pt-4">Рейтинг</dt>
+            <dd class="h4 mb-0 pb-4">{{ category.rate }}/5.0</dd>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accordion -->
+  <div class="container py-5">
+    <h2 class="text-center mb-5">Программы категории</h2>
+      <div class="col-lg-9 col-xxl-8 mx-auto">
+      <div class="accordion" id="accordionQuestions">
+          {% for elem in programs %}
+        <div class="accordion-item shadow mb-2">
+
+          <h3 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed fs-4 " type="button" data-bs-toggle="collapse" data-bs-target="#{{ elem.pk }}" aria-expanded="false" aria-controls="collapseOne">
+              {{ elem.title }}
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div id="{{ elem.pk }}" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionQuestions">
+            <div class="accordion-body">
+              <ul class="mb-0">
+                <li><span class="fw-bold">Количество часов: </span>{{ elem.hours }}</li>
+                  <li><span class="fw-bold">Выдаваемый документ: </span>{{ elem.document }}</li>
+                  <li><span class="fw-bold">Периодичность обучения: </span>{{ elem.period }}</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+{% endfor %}
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bg-skew bg-skew-light">
+
+    <div class="container py-5">
+      <div class="row align-items-center gy-5">
+        <div class="col-md-6 text-center">
+          <img src="/media/teachers/baukin.jpg" width="300" height="400" class="img-thumbnail" alt="Jack Finnigan">
+        </div>
+        <div class="col-md-6 text-center text-md-start">
+          <h2>О преподавателе</h2>
+          <p class="lead">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <a class="link-cta" href="#">Read more</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="container py-5">
+      <h2 class="text-center mb-5">What people are saying…</h2>
+      <div class="row gy-3">
+        <div class="col-md">
+          <blockquote class="bg-white rounded shadow text-center p-4 p-lg-5">
+            <img class="avatar avatar-md mb-4" src="assets/img/renee-sims.jpg" alt="Renee Sims">
+            <p class="text-secondary">It really saves me time and effort. This course is exactly what our business has been lacking.</p>
+            <cite class="small text-uppercase">Renee Sims</cite>
+          </blockquote>
+        </div>
+        <div class="col-md">
+          <blockquote class="bg-white rounded shadow text-center p-4 p-lg-5">
+            <img class="avatar avatar-md mb-4" src="assets/img/leo-gill.jpg" alt="Leo Gill">
+            <p class="text-secondary">I’ve learned so much from this course! It gave me a good grounding in the basics</p>
+            <cite class="small text-uppercase">Leo Gill</cite>
+          </blockquote>
+        </div>
+        <div class="col-md">
+          <blockquote class="bg-white rounded shadow text-center p-4 p-lg-5">
+            <img class="avatar avatar-md mb-4" src="assets/img/dallas-kwok.jpg" alt="Dallas Kwok">
+            <p class="text-secondary">The course covered a lot of information, delivered in concise chunks that were easy to absorb.</p>
+            <cite class="small text-uppercase">Dallas Kwok</cite>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider mx-auto"></div>
+
+    <!-- Call to action -->
+    <div class="container py-5">
+      <div class="text-center">
+        <h2 class="mb-4">Start learning today</h2>
+        <a class="btn btn-primary rounded-pill" href="#" role="button">Join now</a>
+      </div>
+    </div>
+
+  </div><!-- end bg-skew -->
+</main>
+{% endblock content %}

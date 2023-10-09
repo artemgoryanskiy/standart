@@ -1,0 +1,217 @@
+{% extends 'index.html' %}
+{% load cache %}
+{% block title %}Контакты{% endblock title %}
+{% block content %}
+    <main>
+
+        <!-- =======================
+        Page Banner START -->
+        <section class="pt-5 pb-0 mb-5"
+                 style="background-image:url('/media/icons/world.svg'); background-position: center left; background-size: cover;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-xl-6 text-center mx-auto">
+                        <!-- Title -->
+                        <h6 class="text-primary">Наши контакты</h6>
+                        <h1 class="mb-4">Мы здесь, чтобы помочь!</h1>
+                    </div>
+                </div>
+                {% cache 600 info_box %}
+                    <!-- Contact info box -->
+                    <div class="row g-4 g-md-5 mt-0 mt-lg-3">
+                        <!-- Box item -->
+                        <div class="col-lg-4 mt-lg-0">
+                            <div class="card card-body bg-primary shadow py-5 text-center h-100">
+                                <!-- Title -->
+                                <h5 class="text-white mb-3">Отдел продаж</h5>
+                                <ul class="list-inline mb-0">
+                                    <!-- Address -->
+                                    <li class="list-item mb-3">
+                                        <p class="text-white"><i class="bi bi-geo-alt"></i> 259022, Республика Крым, г.
+                                            Симферополь, просп. Победы, 165/1, 3 этаж </p>
+                                    </li>
+                                    <!-- Phone number -->
+                                    <li class="list-item mb-3">
+                                        <a href="tel:+79788149442"
+                                           class="text-white link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">
+                                            <i class="bi bi-telephone"></i> +7 (978) 814-94-42 </a>
+                                    </li>
+                                    <!-- Email id -->
+                                    <li class="list-item mb-0">
+                                        <a href="mailto:info@standart82.ru"
+                                           class="text-white link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">
+                                            <i class="bi bi-envelope-at"></i> info@standart82.ru </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Box item -->
+                        <div class="col-lg-4 mt-lg-0">
+                            <div class="card card-body shadow py-5 text-center h-100">
+                                <!-- Title -->
+                                <h5 class="mb-3">Методический отдел</h5>
+                                <ul class="list-inline mb-0">
+                                    <!-- Address -->
+                                    <li class="list-item mb-3 fw-light">
+                                        <p><i class="bi bi-geo-alt"></i> 259022, Республика Крым, г. Симферополь, просп.
+                                            Победы, 165/1, 3 этаж </p>
+                                    </li>
+                                    <!-- Phone number -->
+                                    <li class="list-item mb-3 fw-light">
+                                        <a href="tel:+79784720162"
+                                           class="text-dark link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">
+                                            <i class="bi bi-telephone"></i> +7 (978) 472-01-62 </a>
+                                    </li>
+                                    <!-- Email id -->
+                                    <li class="list-item mb-0 fw-light">
+                                        <a href="mailto:m01@standart82.ru"
+                                           class="text-dark link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">
+                                            <i class="bi bi-envelope-at"></i> m01@standart82.ru </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Box item -->
+                        <div class="col-lg-4 mt-lg-0">
+                            <div class="card card-body shadow py-5 text-center h-100">
+                                <!-- Title -->
+                                <h5 class="mb-3">Офис-менеджер</h5>
+                                <ul class="list-inline mb-0">
+                                    <!-- Address -->
+                                    <li class="list-item mb-3 fw-light">
+                                        <p><i class="bi bi-geo-alt"></i> 259022, Республика Крым, г. Симферополь, просп.
+                                            Победы, 165/1, 3 этаж </p>
+                                    </li>
+                                    <!-- Phone number -->
+                                    <li class="list-item mb-3 fw-light">
+                                        <a href="tel:+79788343931"
+                                           class="text-dark link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">
+                                            <i class="bi bi-telephone"></i> +7 (978) 834-39-31 </a>
+                                    </li>
+                                    <!-- Email id -->
+                                    <li class="list-item mb-0 fw-light">
+                                        <a href="mailto:office@standart82.ru"
+                                           class="text-dark link-warning link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">
+                                            <i class="bi bi-envelope-at"></i> office@standart82.ru </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </section>
+                    <!-- =======================
+                    Page Banner END -->
+                {% endcache %}
+
+        <!-- =======================
+        Documents START -->
+        <div class="container mb-5">
+            <div class="col-lg-8 col-xl-6 text-center mx-auto">
+                <h2 class="mt-4 mt-md-0">Наши документы</h2>
+            </div>
+            <div class="row g-4 g-md-5 mt-0 mt-lg-3">
+                {% for document in documents %}
+                    <div class="col-lg-4 mt-lg-0 mb-3">
+                        <a href="{{ document.image.url }}">
+                            <img src="{{ document.image.url }}" class="img-thumbnail" alt="{{ document.title }}"></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- =======================
+        Documents END -->
+
+        <!-- =======================
+        Image and contact form START -->
+        <section class="mb-5">
+            <div class="container">
+                <div class="row g-4 g-lg-0 align-items-center">
+
+                    <div class="col-md-6 align-items-center text-center">
+                        <!-- Image -->
+                        <img src="/media/icons/contact.svg" style="height: 400px;" alt="">
+
+                        <!-- Social media button -->
+                        <div class="d-sm-flex align-items-center justify-content-center mt-2 mt-sm-4">
+                            <h5 class="mb-0">Подпишись:</h5>
+                            <ul class="list-inline mb-0 ms-sm-2">
+                                <li class="list-inline-item"><a class="btn btn-white btn-sm shadow px-2 text-facebook"
+                                                                href="https://vk.com/standartstudy"><img
+                                        src="/media/icons/vk_icon-icons.com_66681.svg" alt="" style="height: 30px;"></a>
+                                </li>
+                                <li class="list-inline-item"><a class="btn btn-white btn-sm shadow px-2 text-instagram"
+                                                                href="https://wa.me/79787429042?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!"><img
+                                        src="/media/icons/Whatsapp_icon-icons.com_66931.png" alt=""
+                                        style="height: 30px;"></a></li>
+                                <li class="list-inline-item"><a class="btn btn-white btn-sm shadow px-2 text-twitter"
+                                                                href="mailto:info@standart82.ru"><img
+                                        src="/media/icons/unitymail_104064.svg" alt="" style="height: 30px;"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact form START -->
+                    <div class="col-md-6">
+                        <!-- Title -->
+                        <h2 class="mt-4 mt-md-0">Давай поговорим</h2>
+                        <p>Чтобы запросить ценовое предложение или встретиться за чашечкой кофе, свяжитесь с нами
+                            напрямую или заполните форму, и мы незамедлительно свяжемся с вами</p>
+                        {% if not sent %}
+                            <form method="post">
+                                {% csrf_token %}
+                                <!-- Name -->
+                                <div class="mb-4 bg-light-input">
+                                    <label for="yourName" class="form-label">Ваше имя *</label>
+                                    <input type="text" class="form-control form-control-lg" id="yourName"
+                                           name="first_name">
+                                </div>
+                                <!-- Email -->
+                                <div class="mb-4 bg-light-input">
+                                    <label for="emailInput" class="form-label">Email *</label>
+                                    <input type="email" class="form-control form-control-lg" id="emailInput"
+                                           name="email">
+                                </div>
+                                <!-- Message -->
+                                <div class="mb-4 bg-light-input">
+                                    <label for="textareaBox" class="form-label">Сообщение *</label>
+                                    <textarea class="form-control" id="textareaBox" rows="4" name="message"></textarea>
+                                </div>
+                                <!-- Button -->
+                                <div class="d-grid">
+                                    <button class="btn btn-lg btn-primary mb-0" type="submit">Отправить сообщение
+                                    </button>
+                                </div>
+                            </form>
+                        {% else %}
+                            <p class="fw-bold text-danger">Сообщение отправлено!</p>
+                        {% endif %}
+
+
+                    </div>
+                    <!-- Contact form END -->
+                </div>
+            </div>
+        </section>
+        <!-- =======================
+        Image and contact form END -->
+
+        <!-- =======================
+        Map START -->
+        <section class="pt-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A5c02a37421e29c127747ceec8fcd275956ce937e00832fbc53f840f21d53cfa6&amp;source=constructor"
+                                width="100%" height="400" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- =======================
+        Map END -->
+
+    </main>
+{% endblock content %}

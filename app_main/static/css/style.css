@@ -1,0 +1,28 @@
+.logo_img {
+  height: 90px;
+}
+
+.banner {
+  margin-bottom: 20px;
+}
+
+.banner__img img {
+  height: 450px;
+  min-width: 300px;
+}
+
+.navbar {
+  background: #123c4c;
+}
+
+.blockquote span {
+  color: #fed056;
+}
+
+/*.header {*/
+/*  margin-bottom: 20px;*/
+/*}*/
+
+.card-img-top {
+  filter: brightness(85%);
+}/*# sourceMappingURL=stale.css.map */

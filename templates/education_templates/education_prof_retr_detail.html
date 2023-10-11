@@ -1,4 +1,7 @@
 {% extends 'index.html' %}
+{% block description %}
+    <meta name="description" content="{{ category.short_desc }}">
+{% endblock description %}
 {% block title %}{{ category.title }}{% endblock title %}
 {% block content %}
 <main id="main">
@@ -70,55 +73,41 @@
 
   <div class="bg-skew bg-skew-light">
 
-    <div class="container py-5">
-      <div class="row align-items-center gy-5">
-        <div class="col-md-6 text-center">
-          <img src="/media/teachers/baukin.jpg" width="300" height="400" class="img-thumbnail" alt="Jack Finnigan">
-        </div>
-        <div class="col-md-6 text-center text-md-start">
-          <h2>О преподавателе</h2>
-          <p class="lead">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a class="link-cta" href="#">Read more</a>
-        </div>
-      </div>
-    </div>
+{#    <div class="container py-5">#}
+{#      <div class="row align-items-center gy-5">#}
+{#        <div class="col-md-6 text-center">#}
+{#          <img src="/media/teachers/baukin.jpg" width="300" height="400" class="img-thumbnail" alt="Jack Finnigan">#}
+{#        </div>#}
+{#        <div class="col-md-6 text-center text-md-start">#}
+{#          <h2>О преподавателе</h2>#}
+{#          <p class="lead">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>#}
+{#          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>#}
+{#          <a class="link-cta" href="#">Read more</a>#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
 
     <!-- Testimonials -->
-    <div class="container py-5">
-      <h2 class="text-center mb-5">What people are saying…</h2>
+    <div class="container py-2">
+      <h2 class="text-center mb-5">Что говорят люди…</h2>
       <div class="row gy-3">
-        <div class="col-md">
-          <blockquote class="bg-white rounded shadow text-center p-4 p-lg-5">
-            <img class="avatar avatar-md mb-4" src="assets/img/renee-sims.jpg" alt="Renee Sims">
-            <p class="text-secondary">It really saves me time and effort. This course is exactly what our business has been lacking.</p>
-            <cite class="small text-uppercase">Renee Sims</cite>
-          </blockquote>
-        </div>
-        <div class="col-md">
-          <blockquote class="bg-white rounded shadow text-center p-4 p-lg-5">
-            <img class="avatar avatar-md mb-4" src="assets/img/leo-gill.jpg" alt="Leo Gill">
-            <p class="text-secondary">I’ve learned so much from this course! It gave me a good grounding in the basics</p>
-            <cite class="small text-uppercase">Leo Gill</cite>
-          </blockquote>
-        </div>
-        <div class="col-md">
-          <blockquote class="bg-white rounded shadow text-center p-4 p-lg-5">
-            <img class="avatar avatar-md mb-4" src="assets/img/dallas-kwok.jpg" alt="Dallas Kwok">
-            <p class="text-secondary">The course covered a lot of information, delivered in concise chunks that were easy to absorb.</p>
-            <cite class="small text-uppercase">Dallas Kwok</cite>
-          </blockquote>
+        <div class="col position-relative d-flex justify-content-center">
+
+              <div style="width:560px;height:800px;overflow:hidden;position:relative;"><iframe style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box"
+                                                                                               src="https://yandex.ru/maps-reviews-widget/96094634625?comments"></iframe>
+                  <a href="https://yandex.ru/maps/org/uchebny_tsentr_standart/96094634625/" target="_blank" style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box">Учебный центр Стандарт на карте Симферополя — Яндекс Карты</a>
+              </div>
+
         </div>
       </div>
     </div>
-
     <div class="divider mx-auto"></div>
 
     <!-- Call to action -->
     <div class="container py-5">
       <div class="text-center">
-        <h2 class="mb-4">Start learning today</h2>
-        <a class="btn btn-primary rounded-pill" href="#" role="button">Join now</a>
+        <h2 class="mb-4">Начните учиться сегодня</h2>
+        <a class="btn btn-primary rounded-pill" href="https://standart.cdoprof.com/reg.php" role="button">Подать заявку</a>
       </div>
     </div>
 

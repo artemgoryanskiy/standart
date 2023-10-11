@@ -12,7 +12,8 @@ class CategoryProfTrain(models.Model):
     purpose = models.TextField(null=True, blank=True)
     slug = models.SlugField(max_length=300)
     image = models.ImageField(upload_to='prof_train/category_img/', blank=True, null=True)
-    rate = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True, validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
+    rate = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True,
+                               validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
 
     def __str__(self):
         return self.title

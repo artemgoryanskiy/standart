@@ -17,42 +17,20 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
-from django.views.decorators.cache import cache_page
-# from app_prof_dev.views import main_page_view
-from app_main.views import (
-    main_page_view,
-    education_prof_dev_category_view, education_prof_retr_category_view, education_prof_dev_course_view,
-    education_prof_retr_course_view, education_prof_train_category_view, education_prof_train_course_view,
-    lab_prot_view,
-    ecology_view,
-    prof_train_search,
-    contact_us_view,
-    news_list_view,
-    news_detail_view,
-)
+
+from app_main.views import main_page_view, prof_train_search
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_page_view, name='main'),
-    path('education-prof-dev/', education_prof_dev_category_view, name='education_prof_dev'),
-    path('education-prof-dev/<slug:category_slug>/', education_prof_dev_course_view, name='prof_dev_course'),
-    path('education-prof-retr/', education_prof_retr_category_view, name='education_prof_retr'),
-    path('education-prof-retr/<slug:category_slug>/', education_prof_retr_course_view, name='prof_retr_course'),
-    path('education-prof-train/',education_prof_train_category_view, name='education_prof_train'),
-    path('education-prof-train/<slug:category_slug>/', education_prof_train_course_view, name='prof_train_course'),
-
-    path('services/lab-prot/<slug:slug>/', cache_page(60*24)(lab_prot_view), name='lab_prot'),
-
-    path('services/ecology/<slug:slug>/', cache_page(60*24)(ecology_view), name='ecology'),
-    path('about-us/contacts/', contact_us_view, name='contacts'),
-
-    path('news/', news_list_view, name='news'),
-    path('news/<slug:slug>/', news_detail_view, name='news_detail'),
-
-    path('ecology/', include('app_ecology.urls')),
-    path('labor-protection/', include('app_lab_prot.urls')),
-
-
+    path('education-prof-dev/', include('app_prof_dev.urls')),
+    path('education-prof-retr/', include('app_prof_retraining.urls')),
+    path('education-prof-train/', include('app_prof_training.urls')),
+    path('services/lab-prot/', include('app_lab_prot.urls')),
+    path('services/ecology/', include('app_ecology.urls')),
+    path('about-us/', include('app_about_us.urls')),
+    path('news/', include('app_news.urls')),
     path('search/prof-train/', prof_train_search, name='prof_train_search'),
 ]
 

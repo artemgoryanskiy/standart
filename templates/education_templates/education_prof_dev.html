@@ -1,5 +1,11 @@
 {% extends 'index.html' %}
 {% load programs_ends %}
+{% block description %}
+    <meta name="description" content="Повышение квалификации – ключ к успешному развитию карьеры! Наши программы
+    помогут вам обновить свои знания и навыки, чтобы соответствовать требованиям современного рынка труда.
+    Мы предлагаем гибкие курсы, которые можно проходить онлайн или очно, в удобное для вас время. Не упустите
+    возможность стать лучшим в своей профессии!">
+{% endblock description %}
 {% block title %}Повышение квалификации{% endblock title %}
 {% block content %}
     <main>
@@ -105,7 +111,7 @@
                                         <div class="card-body pb-0">
                                             <!-- Title -->
                                             <h5 class="card-title fw-normal"><a
-                                                    href="{% url 'prof_dev_course' course.slug %}"
+                                                    href="{% url 'app_prof_dev:prof_dev_course' course.slug %}"
                                                     class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">{{ course.title }}</a>
                                             </h5>
                                             <!-- Rating star -->

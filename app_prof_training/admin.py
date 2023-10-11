@@ -14,5 +14,3 @@ class AdminProgram(admin.ModelAdmin):
 
 admin.site.register(CategoryProfTrain, AdminCategory)
 admin.site.register(ProgramProfTrain, AdminProgram)
-
-

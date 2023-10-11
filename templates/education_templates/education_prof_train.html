@@ -1,5 +1,11 @@
 {% extends 'index.html' %}
 {% load programs_ends %}
+{% block description %}
+    <meta name="description" content="Профессиональное обучение - это процесс получения новых знаний и навыков,
+    необходимых для успешной работы в определенной области. Наш учебный центр предлагает широкий спектр программ,
+    которые помогут вам стать квалифицированным специалистом. Мы также предоставляем услуги по переподготовке и
+    повышению квалификации. Наши курсы разработаны с учетом современных требований рынка и технологий.">
+{% endblock description %}
 {% block title %}Профессиональное обучение{% endblock title %}
 {% block content %}
 <main>
@@ -100,7 +106,7 @@ Categories START -->
                 <!-- Card body -->
                 <div class="card-body pb-0">
                   <!-- Title -->
-                  <h5 class="card-title fw-normal"><a href="{% url 'prof_train_course' course.slug %}" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">{{ course.title }}</a></h5>
+                  <h5 class="card-title fw-normal"><a href="{% url 'app_prof_training:prof_train_course' course.slug %}" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">{{ course.title }}</a></h5>
                   <!-- Rating star -->
                   <ul class="list-inline mb-3">
                     <li class="list-inline-item me-0 small "><i class="bi bi-star-fill text-warning"></i></li>

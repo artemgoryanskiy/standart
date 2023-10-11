@@ -13,7 +13,8 @@ class CategoryProfDev(models.Model):
     purpose = models.TextField(null=True, blank=True)
     slug = models.SlugField(unique=True, null=False)
     image = models.ImageField(upload_to='prof_dev/category_img/', blank=True, null=True)
-    rate = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True, validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
+    rate = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True,
+                               validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
 
     def __str__(self):
         return self.title

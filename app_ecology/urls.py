@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import ProductDetailView, main_eco_page_view
+from django.views.decorators.cache import cache_page
+
+from .views import ecology_view
 
 
 app_name = 'app_ecology'
 
 urlpatterns = [
-    path('', main_eco_page_view, name='main_eco'),
-    path('<slug:slug>/', ProductDetailView.as_view(), name='product_detail')
+    path('<slug:slug>/', cache_page(60*24)(ecology_view), name='ecology'),
 ]

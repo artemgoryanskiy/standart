@@ -16,11 +16,14 @@ class CategoryProfDev(models.Model):
     rate = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True,
                                validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
 
+    class Meta:
+        ordering = ['pk']
+
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('category_detail', kwargs={'slug': self.slug})
+        return reverse('app_prof_dev:education_prof_dev', args={'slug': str(self.slug)})
 
     def save(self, *args, **kwargs):
         if not self.slug:

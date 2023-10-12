@@ -17,9 +17,37 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
+from django.contrib.sitemaps.views import sitemap
 
 from app_main.views import main_page_view, prof_train_search
+from sitemap import (CategoryProfDevSitemap, CategoryProfRetrainSitemap, CategoryProfTrainSitemap,
+                     EcoPassSitemap, EcoInvSitemap, EcoNmuSitemap, EcoPdvSitemap, EcoRegSitemap, EcoRepSitemap,
+                     LabDocSitemap, LabOutSitemap, LabRiskSitemap, LabSoutSitemap,
+                     ContactSitemap,
+                     MainPageSitemap,)
 
+
+sitemaps = {
+    'cat_prof_dev': CategoryProfDevSitemap,
+    'cat_prof_retr': CategoryProfRetrainSitemap,
+    'cat_prof_train': CategoryProfTrainSitemap,
+
+    'eco_pass': EcoPassSitemap,
+    'eco_inv': EcoInvSitemap,
+    'eco_nmu': EcoNmuSitemap,
+    'eco_pdv': EcoPdvSitemap,
+    'eco_reg': EcoRegSitemap,
+    'eco_rep': EcoRepSitemap,
+
+    'lab_doc': LabDocSitemap,
+    'lab_out': LabOutSitemap,
+    'lab_risk': LabRiskSitemap,
+    'lab_sout': LabSoutSitemap,
+
+    'contact': ContactSitemap,
+
+    'main': MainPageSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +60,8 @@ urlpatterns = [
     path('about-us/', include('app_about_us.urls')),
     path('news/', include('app_news.urls')),
     path('search/prof-train/', prof_train_search, name='prof_train_search'),
+
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 

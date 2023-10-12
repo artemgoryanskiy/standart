@@ -12,6 +12,9 @@ class CategoryProfRetrain(models.Model):
     rate = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True,
                                validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
 
+    class Meta:
+        ordering = ['pk']
+
     def __str__(self):
         return self.title
 

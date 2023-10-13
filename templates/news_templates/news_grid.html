@@ -1,4 +1,33 @@
 {% extends 'index.html' %}
+{% block metrica %}
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(95213981, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/95213981" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+{% endblock metrica %}
 {% block title %}Новости{% endblock title %}
 {% block content %}
     <main>
@@ -65,7 +94,7 @@
                                     <p class="text-truncate-2">{{ elem.body|truncatewords:10 }}</p>
                                     <!-- Info -->
                                     <div class="d-flex justify-content-between">
-{#                                        <h6 class="mb-0"><a href="#">{{ elem.author.first_name }}</a></h6>#}
+                                        {#                                        <h6 class="mb-0"><a href="#">{{ elem.author.first_name }}</a></h6>#}
                                         <span class="small">{{ elem.created }}</span>
                                     </div>
                                 </div>
@@ -85,7 +114,8 @@
                                 <a class="page-link link-secondary" href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
                             </li>
                         {% endif %}
-                        <li class="page-item"><a class="page-link link-secondary" href="#">Страница {{ page_obj.number }}
+                        <li class="page-item"><a class="page-link link-secondary"
+                                                 href="#">Страница {{ page_obj.number }}
                             из {{ page_obj.paginator.num_pages }}</a></li>
                         {#    <li class="page-item"><a class="page-link" href="#">2</a></li>#}
                         {#    <li class="page-item"><a class="page-link" href="#">3</a></li>#}
@@ -94,7 +124,8 @@
                                 <a class="page-link link-secondary" href="?page={{ page_obj.next_page_number }}">Следующая</a>
                             </li>
                             <li class="page-item">
-                                <a class="page-link link-secondary" href="?page={{ page_obj.paginator.num_pages }}">В конец</a>
+                                <a class="page-link link-secondary" href="?page={{ page_obj.paginator.num_pages }}">В
+                                    конец</a>
                             </li>
                         {% endif %}
                     </ul>

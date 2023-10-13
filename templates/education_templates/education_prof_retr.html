@@ -1,211 +1,270 @@
 {% extends 'index.html' %}
 {% load programs_ends %}
+{% block metrica %}
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(95213981, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/95213981" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+{% endblock metrica %}
 {% block title %}Профессиональная переподготовка{% endblock title %}
 {% block content %}
-<main>
+    <main>
 
-<!-- =======================
-Page Banner START -->
-<section class="bg-light position-relative py-4 overflow-hidden">
+        <!-- =======================
+        Page Banner START -->
+        <section class="bg-light position-relative py-4 overflow-hidden">
 
-	<!-- Svg decoration -->
-	<figure class="position-absolute bottom-0 start-0 d-none d-lg-block">
-		<svg width="822.2px" height="301.9px" viewBox="0 0 822.2 301.9">
-			<path fill="#fd7e14" class="opacity-25" d="M752.5,51.9c-4.5,3.9-8.9,7.8-13.4,11.8c-51.5,45.3-104.8,92.2-171.7,101.4c-39.9,5.5-80.2-3.4-119.2-12.1 c-32.3-7.2-65.6-14.6-98.9-13.9c-66.5,1.3-128.9,35.2-175.7,64.6c-11.9,7.5-23.9,15.3-35.5,22.8c-40.5,26.4-82.5,53.8-128.4,70.7 c-2.1,0.8-4.2,1.5-6.2,2.2L0,301.9c3.3-1.1,6.7-2.3,10.2-3.5c46.1-17,88.1-44.4,128.7-70.9c11.6-7.6,23.6-15.4,35.4-22.8 c46.7-29.3,108.9-63.1,175.1-64.4c33.1-0.6,66.4,6.8,98.6,13.9c39.1,8.7,79.6,17.7,119.7,12.1C634.8,157,688.3,110,740,64.6 c4.5-3.9,9-7.9,13.4-11.8C773.8,35,797,16.4,822.2,1l-0.7-1C796.2,15.4,773,34,752.5,51.9z"></path>
-		</svg>
-	</figure>
+            <!-- Svg decoration -->
+            <figure class="position-absolute bottom-0 start-0 d-none d-lg-block">
+                <svg width="822.2px" height="301.9px" viewBox="0 0 822.2 301.9">
+                    <path fill="#fd7e14" class="opacity-25"
+                          d="M752.5,51.9c-4.5,3.9-8.9,7.8-13.4,11.8c-51.5,45.3-104.8,92.2-171.7,101.4c-39.9,5.5-80.2-3.4-119.2-12.1 c-32.3-7.2-65.6-14.6-98.9-13.9c-66.5,1.3-128.9,35.2-175.7,64.6c-11.9,7.5-23.9,15.3-35.5,22.8c-40.5,26.4-82.5,53.8-128.4,70.7 c-2.1,0.8-4.2,1.5-6.2,2.2L0,301.9c3.3-1.1,6.7-2.3,10.2-3.5c46.1-17,88.1-44.4,128.7-70.9c11.6-7.6,23.6-15.4,35.4-22.8 c46.7-29.3,108.9-63.1,175.1-64.4c33.1-0.6,66.4,6.8,98.6,13.9c39.1,8.7,79.6,17.7,119.7,12.1C634.8,157,688.3,110,740,64.6 c4.5-3.9,9-7.9,13.4-11.8C773.8,35,797,16.4,822.2,1l-0.7-1C796.2,15.4,773,34,752.5,51.9z"></path>
+                </svg>
+            </figure>
 
-	<div class="container position-relative">
-		<div class="row">
-			<div class="col-12">
-				<div class="row align-items-center">
+            <div class="container position-relative">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row align-items-center">
 
-					<!-- Image -->
-					<div class="col-6 col-md-3 text-center order-1">
-						<img src="/media/banner/category-1.svg" alt="">
-					</div>
+                            <!-- Image -->
+                            <div class="col-6 col-md-3 text-center order-1">
+                                <img src="/media/banner/category-1.svg" alt="">
+                            </div>
 
-					<!-- Content -->
-					<div class="col-md-6 px-md-5 text-center position-relative order-md-2 mb-5 mb-md-0">
+                            <!-- Content -->
+                            <div class="col-md-6 px-md-5 text-center position-relative order-md-2 mb-5 mb-md-0">
 
-						<!-- Svg decoration -->
-						<figure class="position-absolute top-0 start-0">
-							<svg width="22px" height="22px" viewBox="0 0 22 22">
-								<polygon fill="#fd7e14" points="22,8.3 13.7,8.3 13.7,0 8.3,0 8.3,8.3 0,8.3 0,13.7 8.3,13.7 8.3,22 13.7,22 13.7,13.7 22,13.7 "></polygon>
-							</svg>
-						</figure>
+                                <!-- Svg decoration -->
+                                <figure class="position-absolute top-0 start-0">
+                                    <svg width="22px" height="22px" viewBox="0 0 22 22">
+                                        <polygon fill="#fd7e14"
+                                                 points="22,8.3 13.7,8.3 13.7,0 8.3,0 8.3,8.3 0,8.3 0,13.7 8.3,13.7 8.3,22 13.7,22 13.7,13.7 22,13.7 "></polygon>
+                                    </svg>
+                                </figure>
 
-						<!-- Svg decoration -->
-						<figure class="position-absolute top-0 start-50 translate-middle mt-n6 d-none d-md-block">
-							<svg width="27px" height="27px">
-								<path fill="#d63384" class="" d="M13.122,5.946 L17.679,-0.001 L17.404,7.528 L24.661,5.946 L19.683,11.533 L26.244,15.056 L18.891,16.089 L21.686,23.068 L15.400,19.062 L13.122,26.232 L10.843,19.062 L4.557,23.068 L7.352,16.089 L-0.000,15.056 L6.561,11.533 L1.582,5.946 L8.839,7.528 L8.565,-0.001 L13.122,5.946 Z"></path>
-							</svg>
-						</figure>
+                                <!-- Svg decoration -->
+                                <figure class="position-absolute top-0 start-50 translate-middle mt-n6 d-none d-md-block">
+                                    <svg width="27px" height="27px">
+                                        <path fill="#d63384" class=""
+                                              d="M13.122,5.946 L17.679,-0.001 L17.404,7.528 L24.661,5.946 L19.683,11.533 L26.244,15.056 L18.891,16.089 L21.686,23.068 L15.400,19.062 L13.122,26.232 L10.843,19.062 L4.557,23.068 L7.352,16.089 L-0.000,15.056 L6.561,11.533 L1.582,5.946 L8.839,7.528 L8.565,-0.001 L13.122,5.946 Z"></path>
+                                    </svg>
+                                </figure>
 
 
-						<!-- Title -->
-						<h1 class="mb-3">Чему вы хотите научиться?</h1>
-						<p class="mb-3">Выбирайте разнообразные курсы, от базовых до специализированных, которые отвечают различным потребностям и интересам учащихся</p>
+                                <!-- Title -->
+                                <h1 class="mb-3">Чему вы хотите научиться?</h1>
+                                <p class="mb-3">Выбирайте разнообразные курсы, от базовых до специализированных, которые
+                                    отвечают различным потребностям и интересам учащихся</p>
 
-						<!-- Search -->
-						<form class="bg-body rounded p-2" action="{% url 'prof_train_search' %}">
+                                <!-- Search -->
+                                <form class="bg-body rounded p-2" action="{% url 'prof_train_search' %}">
 
-							<div class="input-group">
-								<input class="form-control border-0 me-1" type="search" placeholder="Искать курс " name="query">
-								<button type="button" class="btn btn-dark mb-0 rounded">Поиск</button>
-							</div>
-						</form>
-					</div>
+                                    <div class="input-group">
+                                        <input class="form-control border-0 me-1" type="search"
+                                               placeholder="Искать курс " name="query">
+                                        <button type="button" class="btn btn-dark mb-0 rounded">Поиск</button>
+                                    </div>
+                                </form>
+                            </div>
 
-					<!-- Image -->
-					<div class="col-6 col-md-3 text-center order-3">
-						<img src="/media/banner/category-2.svg" alt="">
-					</div>
+                            <!-- Image -->
+                            <div class="col-6 col-md-3 text-center order-3">
+                                <img src="/media/banner/category-2.svg" alt="">
+                            </div>
 
-				</div> <!-- Row END -->
-			</div>
-		</div> <!-- Row END -->
-	</div>
-</section>
-<!-- =======================
-Page Banner END -->
-
-<!-- =======================
-Categories START -->
-<section class="py-4">
-	<div class="container">
-		<!-- Title -->
-		<div class="row mb-4">
-			<div class="col-lg-8 mx-auto text-center">
-				<h2>Профессиональная переподготовка</h2>
-				<p class="mb-0">Выберите категорию программ по профессиональной переподготовке</p>
-			</div>
-		</div>
-
-<div class="row mt-3">
-			<!-- Main content START -->
-			<div class="col-12">
-
-				<!-- Course Grid START -->
-				<div class="row g-4 mb-5">
-                    {% for course in page_obj %}
-					<!-- Card item START -->
-					<div class="col-sm-6 col-lg-4 col-xl-3">
-              <div class="card shadow h-100">
-                <!-- Image -->
-                  {% if course.image %}
-                <img src="{{ course.image.url }}" class="card-img-top" alt="course image">
-                  {% endif %}
-                <!-- Card body -->
-                <div class="card-body pb-0">
-                  <!-- Title -->
-                  <h5 class="card-title fw-normal"><a href="{% url 'app_prof_retraining:prof_retr_course' course.slug %}" class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">{{ course.title }}</a></h5>
-                  <!-- Rating star -->
-                  <ul class="list-inline mb-3">
-                    <li class="list-inline-item me-0 small "><i class="bi bi-star-fill text-warning"></i></li>
-                    <li class="list-inline-item me-0 small"><i class="bi bi-star-fill text-warning"></i></li>
-                    <li class="list-inline-item me-0 small"><i class="bi bi-star-fill text-warning"></i></li>
-                    <li class="list-inline-item me-0 small"><i class="bi bi-star-fill text-warning"></i></li>
-                    <li class="list-inline-item me-0 small"><i class="bi bi-star-half text-warning"></i></li>
-                    <li class="list-inline-item ms-2 h6 fw-light mb-0">{{ course.rate }}</li>
-                  </ul>
-                </div>
-                <!-- Card footer -->
-                <div class="card-footer pt-0 pb-3">
-                  <hr>
-                  <div class="d-flex justify-content-between">
-                    <span class="h6 fw-light mb-0"><i class="bi bi-calendar3 text-warning me-2"></i>{{ course.programs.count }} {{ course.programs.count|ru_plural:'программа, программы, программ' }}</span>
-                  </div>
-                </div>
-              </div>
+                        </div> <!-- Row END -->
+                    </div>
+                </div> <!-- Row END -->
             </div>
-					<!-- Card item END -->
-                    {% endfor %}
+        </section>
+        <!-- =======================
+        Page Banner END -->
 
-				</div>
-				<!-- Course Grid END -->
-            <!-- Pagination START -->
+        <!-- =======================
+        Categories START -->
+        <section class="py-4">
+            <div class="container">
+                <!-- Title -->
+                <div class="row mb-4">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2>Профессиональная переподготовка</h2>
+                        <p class="mb-0">Выберите категорию программ по профессиональной переподготовке</p>
+                    </div>
+                </div>
 
-                <nav aria-label="Пример навигации по страницам">
-                    <ul class="pagination justify-content-center">
-                        {% if page_obj.has_previous %}
-                            <li class="page-item"><a class="page-link link-secondary" href="?page=1">В начало</a></li>
-                            <li class="page-item">
-                                <a class="page-link link-secondary" href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
-                            </li>
-                        {% endif %}
-                        <li class="page-item"><a class="page-link link-secondary" href="#">Страница {{ page_obj.number }}
-                            из {{ page_obj.paginator.num_pages }}</a></li>
-                        {#    <li class="page-item"><a class="page-link" href="#">2</a></li>#}
-                        {#    <li class="page-item"><a class="page-link" href="#">3</a></li>#}
-                        {% if page_obj.has_next %}
-                            <li class="page-item">
-                                <a class="page-link link-secondary" href="?page={{ page_obj.next_page_number }}">Следующая</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link link-secondary" href="?page={{ page_obj.paginator.num_pages }}">В конец</a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </nav>
-                <!-- Pagination END -->
-			</div>
-			<!-- Main content END -->
-		</div>
-</section>
-<!-- =======================
-Categories END -->
+                <div class="row mt-3">
+                    <!-- Main content START -->
+                    <div class="col-12">
+
+                        <!-- Course Grid START -->
+                        <div class="row g-4 mb-5">
+                            {% for course in page_obj %}
+                                <!-- Card item START -->
+                                <div class="col-sm-6 col-lg-4 col-xl-3">
+                                    <div class="card shadow h-100">
+                                        <!-- Image -->
+                                        {% if course.image %}
+                                            <img src="{{ course.image.url }}" class="card-img-top" alt="course image">
+                                        {% endif %}
+                                        <!-- Card body -->
+                                        <div class="card-body pb-0">
+                                            <!-- Title -->
+                                            <h5 class="card-title fw-normal"><a
+                                                    href="{% url 'app_prof_retraining:prof_retr_course' course.slug %}"
+                                                    class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">{{ course.title }}</a>
+                                            </h5>
+                                            <!-- Rating star -->
+                                            <ul class="list-inline mb-3">
+                                                <li class="list-inline-item me-0 small "><i
+                                                        class="bi bi-star-fill text-warning"></i></li>
+                                                <li class="list-inline-item me-0 small"><i
+                                                        class="bi bi-star-fill text-warning"></i></li>
+                                                <li class="list-inline-item me-0 small"><i
+                                                        class="bi bi-star-fill text-warning"></i></li>
+                                                <li class="list-inline-item me-0 small"><i
+                                                        class="bi bi-star-fill text-warning"></i></li>
+                                                <li class="list-inline-item me-0 small"><i
+                                                        class="bi bi-star-half text-warning"></i></li>
+                                                <li class="list-inline-item ms-2 h6 fw-light mb-0">{{ course.rate }}</li>
+                                            </ul>
+                                        </div>
+                                        <!-- Card footer -->
+                                        <div class="card-footer pt-0 pb-3">
+                                            <hr>
+                                            <div class="d-flex justify-content-between">
+                                                <span class="h6 fw-light mb-0"><i
+                                                        class="bi bi-calendar3 text-warning me-2"></i>{{ course.programs.count }} {{ course.programs.count|ru_plural:'программа, программы, программ' }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card item END -->
+                            {% endfor %}
+
+                        </div>
+                        <!-- Course Grid END -->
+                        <!-- Pagination START -->
+
+                        <nav aria-label="Пример навигации по страницам">
+                            <ul class="pagination justify-content-center">
+                                {% if page_obj.has_previous %}
+                                    <li class="page-item"><a class="page-link link-secondary" href="?page=1">В
+                                        начало</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link link-secondary"
+                                           href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+                                    </li>
+                                {% endif %}
+                                <li class="page-item"><a class="page-link link-secondary"
+                                                         href="#">Страница {{ page_obj.number }}
+                                    из {{ page_obj.paginator.num_pages }}</a></li>
+                                {#    <li class="page-item"><a class="page-link" href="#">2</a></li>#}
+                                {#    <li class="page-item"><a class="page-link" href="#">3</a></li>#}
+                                {% if page_obj.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link link-secondary"
+                                           href="?page={{ page_obj.next_page_number }}">Следующая</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link link-secondary"
+                                           href="?page={{ page_obj.paginator.num_pages }}">В конец</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        <!-- Pagination END -->
+                    </div>
+                    <!-- Main content END -->
+                </div>
+        </section>
+        <!-- =======================
+        Categories END -->
 
 
-<section class="pt-0">
-	<div class="container position-relative overflow-hidden">
-		<!-- SVG decoration -->
-		<figure class="position-absolute top-50 start-50 translate-middle ms-3">
-			<svg>
-				<path fill="white" class="opacity-25" d="m496 22.999c0 10.493-8.506 18.999-18.999 18.999s-19-8.506-19-18.999 8.507-18.999 19-18.999 18.999 8.506 18.999 18.999z"></path>
-				<path fill="white" class="opacity-25" d="m775 102.5c0 5.799-4.701 10.5-10.5 10.5-5.798 0-10.499-4.701-10.499-10.5 0-5.798 4.701-10.499 10.499-10.499 5.799 0 10.5 4.701 10.5 10.499z"></path>
-				<path fill="white" class="opacity-25" d="m192 102c0 6.626-5.373 11.999-12 11.999s-11.999-5.373-11.999-11.999c0-6.628 5.372-12 11.999-12s12 5.372 12 12z"></path>
-				<path fill="white" class="opacity-25" d="m20.499 10.25c0 5.66-4.589 10.249-10.25 10.249-5.66 0-10.249-4.589-10.249-10.249-0-5.661 4.589-10.25 10.249-10.25 5.661-0 10.25 4.589 10.25 10.25z"></path>
-			</svg>
-		</figure>
-		<!-- Svg decoration -->
-		<figure class="position-absolute bottom-0 end-0 mb-5 d-none d-sm-block">
-			<svg class="rotate-130" width="258.7px" height="86.9px" viewBox="0 0 258.7 86.9" style="transform: rotate(130deg)">
-				<path stroke="white" fill="none" stroke-width="2" d="M0,7.2c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5 c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5c16,0,16,25.5,31.9,25.5s16-25.5,31.9-25.5"></path>
-				<path stroke="white" fill="none" stroke-width="2" d="M0,57c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5 c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5c16,0,16,25.5,31.9,25.5s16-25.5,31.9-25.5"></path>
-			</svg>
-		</figure>
+        <section class="pt-0">
+            <div class="container position-relative overflow-hidden">
+                <!-- SVG decoration -->
+                <figure class="position-absolute top-50 start-50 translate-middle ms-3">
+                    <svg>
+                        <path fill="white" class="opacity-25"
+                              d="m496 22.999c0 10.493-8.506 18.999-18.999 18.999s-19-8.506-19-18.999 8.507-18.999 19-18.999 18.999 8.506 18.999 18.999z"></path>
+                        <path fill="white" class="opacity-25"
+                              d="m775 102.5c0 5.799-4.701 10.5-10.5 10.5-5.798 0-10.499-4.701-10.499-10.5 0-5.798 4.701-10.499 10.499-10.499 5.799 0 10.5 4.701 10.5 10.499z"></path>
+                        <path fill="white" class="opacity-25"
+                              d="m192 102c0 6.626-5.373 11.999-12 11.999s-11.999-5.373-11.999-11.999c0-6.628 5.372-12 11.999-12s12 5.372 12 12z"></path>
+                        <path fill="white" class="opacity-25"
+                              d="m20.499 10.25c0 5.66-4.589 10.249-10.25 10.249-5.66 0-10.249-4.589-10.249-10.249-0-5.661 4.589-10.25 10.249-10.25 5.661-0 10.25 4.589 10.25 10.25z"></path>
+                    </svg>
+                </figure>
+                <!-- Svg decoration -->
+                <figure class="position-absolute bottom-0 end-0 mb-5 d-none d-sm-block">
+                    <svg class="rotate-130" width="258.7px" height="86.9px" viewBox="0 0 258.7 86.9"
+                         style="transform: rotate(130deg)">
+                        <path stroke="white" fill="none" stroke-width="2"
+                              d="M0,7.2c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5 c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5c16,0,16,25.5,31.9,25.5s16-25.5,31.9-25.5"></path>
+                        <path stroke="white" fill="none" stroke-width="2"
+                              d="M0,57c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5 c16,0,16,25.5,31.9,25.5c16,0,16-25.5,31.9-25.5c16,0,16,25.5,31.9,25.5s16-25.5,31.9-25.5"></path>
+                    </svg>
+                </figure>
 
-		<div class="p-3 p-sm-5 rounded-3" style="background: linear-gradient(360deg, #066ac9 0%, #064f8a 100%)">
-			<div class="row justify-content-center position-relative">
-				<!-- SVG decoration -->
-				<figure class="position-absolute top-50 start-0 translate-middle-y">
-					<svg width="141px" height="141px">
-						<path fill="white" class="opacity-25" d="M140.520,70.258 C140.520,109.064 109.062,140.519 70.258,140.519 C31.454,140.519 -0.004,109.064 -0.004,70.258 C-0.004,31.455 31.454,-0.003 70.258,-0.003 C109.062,-0.003 140.520,31.455 140.520,70.258 Z"></path>
-					</svg>
-				</figure>
-				<!-- Newsletter -->
-				<div class="col-12 position-relative my-2 my-sm-3">
-					<div class="row align-items-center">
-						<!-- Title -->
-						<div class="col-lg-6">
-							<h3 class="text-white mb-3 mb-lg-0">Готовы ли Вы к более интересному разговору?</h3>
-						</div>
-						<!-- Input item -->
-						<div class="col-lg-6 text-lg-end">
-							<form class="bg-body rounded p-2">
-								<div class="input-group">
-									<input class="form-control border-0 me-1" type="email" placeholder="Введите Ваш email здесь">
-									<button type="button" class="btn btn-dark mb-0 rounded">Получить предложение</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div> <!-- Row END -->
-		</div>
-	</div>
-</section>
+                <div class="p-3 p-sm-5 rounded-3" style="background: linear-gradient(360deg, #066ac9 0%, #064f8a 100%)">
+                    <div class="row justify-content-center position-relative">
+                        <!-- SVG decoration -->
+                        <figure class="position-absolute top-50 start-0 translate-middle-y">
+                            <svg width="141px" height="141px">
+                                <path fill="white" class="opacity-25"
+                                      d="M140.520,70.258 C140.520,109.064 109.062,140.519 70.258,140.519 C31.454,140.519 -0.004,109.064 -0.004,70.258 C-0.004,31.455 31.454,-0.003 70.258,-0.003 C109.062,-0.003 140.520,31.455 140.520,70.258 Z"></path>
+                            </svg>
+                        </figure>
+                        <!-- Newsletter -->
+                        <div class="col-12 position-relative my-2 my-sm-3">
+                            <div class="row align-items-center">
+                                <!-- Title -->
+                                <div class="col-lg-6">
+                                    <h3 class="text-white mb-3 mb-lg-0">Готовы ли Вы к более интересному разговору?</h3>
+                                </div>
+                                <!-- Input item -->
+                                <div class="col-lg-6 text-lg-end">
+                                    <form class="bg-body rounded p-2">
+                                        <div class="input-group">
+                                            <input class="form-control border-0 me-1" type="email"
+                                                   placeholder="Введите Ваш email здесь">
+                                            <button type="button" class="btn btn-dark mb-0 rounded">Получить
+                                                предложение
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- Row END -->
+                </div>
+            </div>
+        </section>
 
-</main>
+    </main>
 {% endblock content %}

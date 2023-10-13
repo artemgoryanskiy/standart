@@ -1,100 +1,131 @@
 {% extends 'index.html' %}
+{% block metrica %}
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(95213981, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/95213981" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+{% endblock metrica %}
 {% block title %}{{ post.title }}{% endblock title %}
 {% block content %}
-<main>
+    <main>
 
-<!-- =======================
-Main Content START -->
-<section class="pb-0 pt-4 pb-md-5">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
+        <!-- =======================
+        Main Content START -->
+        <section class="pb-0 pt-4 pb-md-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
 
-					<!-- Content -->
-					<div class="col-lg-9 order-1">
-						<!-- Pre title -->
-						<span>{{ post.created }}</span><span class="mx-2">|</span><div class="badge text-bg-success">{{ post.category.title }}</div>
-						<!-- Title -->
-						<h1 class="mt-2 mb-0 display-5">{{ post.title }}</h1>
-						<!-- Info -->
-						<p class="mt-2">{{ post.body }}</p>
-					</div>
-				</div>
-				<!-- Title and Info END -->
+                        <!-- Content -->
+                        <div class="col-lg-9 order-1">
+                            <!-- Pre title -->
+                            <span>{{ post.created }}</span><span class="mx-2">|</span>
+                            <div class="badge text-bg-success">{{ post.category.title }}</div>
+                            <!-- Title -->
+                            <h1 class="mt-2 mb-0 display-5">{{ post.title }}</h1>
+                            <!-- Info -->
+                            <p class="mt-2">{{ post.body }}</p>
+                        </div>
+                    </div>
+                    <!-- Title and Info END -->
 
 
-				<!-- Image START -->
-				<div class="row g-4 mt-4 mb-5">
-					<div class="col-sm-6 col-md-4">
-						<a href="#" data-glightbox="" data-gallery="image-popup">
-							<img src="{{ post.image.url }}" class="rounded-3" alt="" style="max-width: 650px;">
-						</a>
-					</div>
-				</div>
-				<!-- Image END -->
+                    <!-- Image START -->
+                    <div class="row g-4 mt-4 mb-5">
+                        <div class="col-sm-6 col-md-4">
+                            <a href="#" data-glightbox="" data-gallery="image-popup">
+                                <img src="{{ post.image.url }}" class="rounded-3" alt="" style="max-width: 650px;">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Image END -->
 
-				<hr> <!-- Divider -->
+                    <hr> <!-- Divider -->
 
-				<!-- Comment review and form START -->
-				<div class="row mt-4">
-					<!-- Comment START -->
+                    <!-- Comment review and form START -->
+                    <div class="row mt-4">
+                        <!-- Comment START -->
 
-					<div class="col-md-7">
-						<h3>Количество комментариев {{ comments.count }}</h3>
-						<!-- Comment level 1-->
-                        {% for comment in comments %}
-						<div class="my-4 d-flex">
-							<div>
-								<div class="mb-2">
-									<h5 class="m-0">{{ comment.name }}</h5>
-									<span class="me-3 small">{{ comment.created_on }}</span>
-								</div>
-								<p>{{ comment.body }}</p>
-{#								<a href="#" class="btn btn-sm btn-light mb-0">Reply</a>#}
-							</div>
-						</div>
-                           {% endfor %}
-					</div>
-					<!-- Comment END -->
+                        <div class="col-md-7">
+                            <h3>Количество комментариев {{ comments.count }}</h3>
+                            <!-- Comment level 1-->
+                            {% for comment in comments %}
+                                <div class="my-4 d-flex">
+                                    <div>
+                                        <div class="mb-2">
+                                            <h5 class="m-0">{{ comment.name }}</h5>
+                                            <span class="me-3 small">{{ comment.created_on }}</span>
+                                        </div>
+                                        <p>{{ comment.body }}</p>
+                                        {#								<a href="#" class="btn btn-sm btn-light mb-0">Reply</a>#}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <!-- Comment END -->
 
-					<!-- Form START -->
-					<div class="col-md-5">
-						<!-- Title -->
-						<h3 class="mt-3 mt-sm-0">Ваш комментарий!</h3>
-						<small>Ваш адрес электронной почты опубликован не будет. Поля, обязательные для заполнения, отмечены *</small>
+                        <!-- Form START -->
+                        <div class="col-md-5">
+                            <!-- Title -->
+                            <h3 class="mt-3 mt-sm-0">Ваш комментарий!</h3>
+                            <small>Ваш адрес электронной почты опубликован не будет. Поля, обязательные для заполнения,
+                                отмечены *</small>
 
-						<form method="post" class="row g-3 mt-2 mb-5" name="comment_form">
-                            {% csrf_token %}
-							<!-- Name -->
-							<div class="col-lg-6">
-								<label class="form-label">Имя *</label>
-								<input type="text" class="form-control" aria-label="First name" name="name">
-							</div>
-							<!-- Email -->
-							<div class="col-lg-6">
-								<label class="form-label">Email *</label>
-								<input type="email" class="form-control" name="email">
-							</div>
-							<!-- Comment -->
-							<div class="col-12">
-								<label class="form-label">Ваш комментарий *</label>
-								<textarea class="form-control" rows="3" name="body"></textarea>
-							</div>
-							<!-- Button -->
-							<div class="col-12">
-								<button type="submit" class="btn btn-primary mb-0">Опубликовать</button>
-							</div>
-						</form>
-					</div>
-					<!-- Form END -->
-				</div>
-				<!-- Comment review and form END -->
-			</div>
-		</div> <!-- Row END -->
-	</div>
-</section>
-<!-- =======================
-Main Content END -->
+                            <form method="post" class="row g-3 mt-2 mb-5" name="comment_form">
+                                {% csrf_token %}
+                                <!-- Name -->
+                                <div class="col-lg-6">
+                                    <label class="form-label">Имя *</label>
+                                    <input type="text" class="form-control" aria-label="First name" name="name">
+                                </div>
+                                <!-- Email -->
+                                <div class="col-lg-6">
+                                    <label class="form-label">Email *</label>
+                                    <input type="email" class="form-control" name="email">
+                                </div>
+                                <!-- Comment -->
+                                <div class="col-12">
+                                    <label class="form-label">Ваш комментарий *</label>
+                                    <textarea class="form-control" rows="3" name="body"></textarea>
+                                </div>
+                                <!-- Button -->
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary mb-0">Опубликовать</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Form END -->
+                    </div>
+                    <!-- Comment review and form END -->
+                </div>
+            </div> <!-- Row END -->
+            </div>
+        </section>
+        <!-- =======================
+        Main Content END -->
 
-</main>
+    </main>
 {% endblock content %}

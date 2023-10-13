@@ -1,10 +1,39 @@
 {% extends 'index.html' %}
 {% load programs_ends %}
+{% block metrica %}
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(95213981, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/95213981" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+{% endblock metrica %}
 {% block description %}
     <meta name="description" content="Повышение квалификации – ключ к успешному развитию карьеры! Наши программы
-    помогут вам обновить свои знания и навыки, чтобы соответствовать требованиям современного рынка труда.
-    Мы предлагаем гибкие курсы, которые можно проходить онлайн или очно, в удобное для вас время. Не упустите
-    возможность стать лучшим в своей профессии!">
+помогут вам обновить свои знания и навыки, чтобы соответствовать требованиям современного рынка труда.
+Мы предлагаем гибкие курсы, которые можно проходить онлайн или очно, в удобное для вас время. Не упустите
+возможность стать лучшим в своей профессии!">
 {% endblock description %}
 {% block title %}Повышение квалификации{% endblock title %}
 {% block content %}
@@ -133,8 +162,8 @@
                                         <div class="card-footer pt-0 pb-3">
                                             <hr>
                                             <div class="d-flex justify-content-between">
-                                                <span class="h6 fw-light mb-0"><i
-                                                        class="bi bi-calendar3 text-warning me-2"></i>{{ course.programs.count }} {{ course.programs.count|ru_plural:'программа, программы, программ' }}</span>
+            <span class="h6 fw-light mb-0"><i
+                    class="bi bi-calendar3 text-warning me-2"></i>{{ course.programs.count }} {{ course.programs.count|ru_plural:'программа, программы, программ' }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -144,31 +173,36 @@
 
                         </div>
                         <!-- Course Grid END -->
-                    <!-- Pagination START -->
+                        <!-- Pagination START -->
 
-                <nav aria-label="Пример навигации по страницам">
-                    <ul class="pagination justify-content-center">
-                        {% if page_obj.has_previous %}
-                            <li class="page-item"><a class="page-link link-secondary" href="?page=1">В начало</a></li>
-                            <li class="page-item">
-                                <a class="page-link link-secondary" href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
-                            </li>
-                        {% endif %}
-                        <li class="page-item"><a class="page-link link-secondary" href="#">Страница {{ page_obj.number }}
-                            из {{ page_obj.paginator.num_pages }}</a></li>
-                        {#    <li class="page-item"><a class="page-link" href="#">2</a></li>#}
-                        {#    <li class="page-item"><a class="page-link" href="#">3</a></li>#}
-                        {% if page_obj.has_next %}
-                            <li class="page-item">
-                                <a class="page-link link-secondary" href="?page={{ page_obj.next_page_number }}">Следующая</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link link-secondary" href="?page={{ page_obj.paginator.num_pages }}">В конец</a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </nav>
-                <!-- Pagination END -->
+                        <nav aria-label="Пример навигации по страницам">
+                            <ul class="pagination justify-content-center">
+                                {% if page_obj.has_previous %}
+                                    <li class="page-item"><a class="page-link link-secondary" href="?page=1">В
+                                        начало</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link link-secondary"
+                                           href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
+                                    </li>
+                                {% endif %}
+                                <li class="page-item"><a class="page-link link-secondary"
+                                                         href="#">Страница {{ page_obj.number }}
+                                    из {{ page_obj.paginator.num_pages }}</a></li>
+                                {#    <li class="page-item"><a class="page-link" href="#">2</a></li>#}
+                                {#    <li class="page-item"><a class="page-link" href="#">3</a></li>#}
+                                {% if page_obj.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link link-secondary"
+                                           href="?page={{ page_obj.next_page_number }}">Следующая</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link link-secondary"
+                                           href="?page={{ page_obj.paginator.num_pages }}">В конец</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                        <!-- Pagination END -->
                     </div>
                     <!-- Main content END -->
                 </div>

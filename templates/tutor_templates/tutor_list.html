@@ -1,0 +1,206 @@
+{% extends 'index.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% load programs_ends %}
+{% block metrica %}
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(95213981, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/95213981" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+{% endblock metrica %}
+{% block description %}
+    <meta name="description" content="Повышение квалификации – ключ к успешному развитию карьеры! Наши программы
+помогут вам обновить свои знания и навыки, чтобы соответствовать требованиям современного рынка труда.
+Мы предлагаем гибкие курсы, которые можно проходить онлайн или очно, в удобное для вас время. Не упустите
+возможность стать лучшим в своей профессии!">
+{% endblock description %}
+{% block title %}Наши преподаватели{% endblock title %}
+{% block content %}
+
+    <main id="main">
+        <!-- Hero -->
+        <div class="position-relative d-flex align-items-center text-white min-vh-75 overflow-hidden"
+             style="background: linear-gradient(360deg, #066ac9 0%, #064f8a 100%)">
+            <div class="container mb-5 py-5">
+                <div class="col-lg-10 text-center mx-auto">
+                    <h1 class="display-4 mb-4">Наши преподаватели</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories START -->
+        <section class="py-5">
+            <div class="container">
+                <!-- Title -->
+                <div class="row mb-4">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2>Наши педагоги - </h2>
+                        <p class="mb-0">это профессионалы своего дела, с большим опытом работы и любовью к своей
+                            профессии.</p>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <!-- Main content START -->
+                    <div class="col-12">
+                        <!-- Tutor Grid START -->
+                        <div class="row g-4 justify-content-center">
+                            {% for tutor in tutors %}
+                                <!-- Card item START -->
+                                <div class="col-lg-10 col-xl-6">
+                                    <div class="card h-100 shadow p-2">
+                                        <div class="row g-0">
+                                            <!-- Image -->
+                                            <div class="col-md-4">
+                                                <img src="{{ tutor.photo.url }}" class="rounded-3 img-fluid"
+                                                     alt="{{ tutor.last_name }}">
+                                            </div>
+                                            <!-- Card body -->
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <!-- Title -->
+                                                    <div class="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
+                                                        <div>
+                                                            <h5 class="card-title mb-0"><a
+                                                                    class="link-body-emphasis link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover"
+                                                                    href="#">{{ tutor.last_name }} {{ tutor.first_name }}</a>
+                                                            </h5>
+                                                            <p class="small mb-2 mb-sm-0">Преподаватель</p>
+                                                        </div>
+                                                        <span class="h6 fw-light">{{ tutor.rate }}<i
+                                                                class="bi bi-star-fill text-warning ms-1"></i></span>
+                                                    </div>
+                                                    <!-- Content -->
+                                                    <p class="text-truncate-2 fw-light mb-3">{{ tutor.description }}</p>
+                                                    <!-- Info -->
+                                                    <div class="d-sm-flex justify-content-sm-between align-items-center">
+                                                        <!-- Title -->
+                                                        <h6 class="text-orange mb-0">{{ tutor.subject }}</h6>
+
+                                                        <!-- Social button -->
+                                                        <ul class="list-inline mb-0 mt-3 mt-sm-0">
+
+                                                            <li class="list-inline-item">
+                                                                <a class="mb-0 me-1 text-twitter"
+                                                                   href="mailto:{{ tutor.email }}"><img
+                                                                        src="/media/icons/unitymail_104064.svg"
+                                                                        alt="Mail" style="height: 25px;"></a>
+                                                            </li>
+                                                            <li class="list-inline-item">
+                                                                <a class="mb-0 text-linkedin"
+                                                                   href="{{ tutor.vk_link }}"><img
+                                                                        src="/media/icons/vk_icon-icons.com_66681.svg"
+                                                                        alt="ВК" style="height: 25px;"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card item END -->
+                            {% endfor %}
+                        </div>
+                        <!-- Tutor Grid END -->
+                    </div>
+                    <!-- Main content END -->
+                </div>
+            </div>
+        </section>
+        <!-- =======================
+        Categories END -->
+
+        <section class="pt-0">
+            <div class="container position-relative">
+                <!-- SVG -->
+                <figure class="position-absolute top-50 start-50 translate-middle ms-2">
+                    <svg>
+                        <path d="m496 22.999c0 10.493-8.506 18.999-18.999 18.999s-19-8.506-19-18.999 8.507-18.999 19-18.999 18.999 8.506 18.999 18.999z"
+                              fill="#fff" fill-rule="evenodd" opacity=".502"></path>
+                        <path d="m775 102.5c0 5.799-4.701 10.5-10.5 10.5-5.798 0-10.499-4.701-10.499-10.5 0-5.798 4.701-10.499 10.499-10.499 5.799 0 10.5 4.701 10.5 10.499z"
+                              fill="#fff" fill-rule="evenodd" opacity=".102"></path>
+                        <path d="m192 102c0 6.626-5.373 11.999-12 11.999s-11.999-5.373-11.999-11.999c0-6.628 5.372-12 11.999-12s12 5.372 12 12z"
+                              fill="#fff" fill-rule="evenodd" opacity=".2"></path>
+                        <path d="m20.499 10.25c0 5.66-4.589 10.249-10.25 10.249-5.66 0-10.249-4.589-10.249-10.249-0-5.661 4.589-10.25 10.249-10.25 5.661-0 10.25 4.589 10.25 10.25z"
+                              fill="#fff" fill-rule="evenodd" opacity=".2"></path>
+                    </svg>
+                </figure>
+                <div class="bg-success p-4 p-sm-5 rounded-3">
+                    <div class="row justify-content-center position-relative">
+                        <!-- Svg -->
+                        <figure class="fill-white opacity-25 position-absolute top-50 start-0 translate-middle-y">
+                            <svg width="141px" height="141px">
+                                <path d="M140.520,70.258 C140.520,109.064 109.062,140.519 70.258,140.519 C31.454,140.519 -0.004,109.064 -0.004,70.258 C-0.004,31.455 31.454,-0.003 70.258,-0.003 C109.062,-0.003 140.520,31.455 140.520,70.258 Z"
+                                      fill="#fff"></path>
+                            </svg>
+                        </figure>
+                        <!-- Action box -->
+                        <div class="col-11 position-relative">
+                            <div class="row align-items-center">
+                                <!-- Title -->
+                                <div class="col-lg-7">
+                                    <h3 class="text-white">Станьте преподавателем!</h3>
+                                    <p class="text-white mb-3 mb-lg-0">Преподавание - наша страсть. Учеба - наша жизнь.
+                                        Присоединяйся к нашей команде профессионалов уже сейчас.</p>
+                                </div>
+                                <!-- Button -->
+                                <div class="col-lg-5 text-lg-end">
+                                    <a href="#" class="btn btn-dark mb-0 create-tutor" type="button"
+                                       data-bs-toggle="modal" data-bs-target="#exampleModal">Начните преподавать
+                                        сегодня</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <form action="#" method="post" name="form">
+            <!-- Модальное окно -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Заполните форму</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Закрыть"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{ form|crispy }}
+                            {% csrf_token %}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                            <button type="submit" class="btn btn-primary create-tutor">Сохранить изменения</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+{% endblock content %}

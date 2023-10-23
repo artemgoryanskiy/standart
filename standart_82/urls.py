@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
+from django.views.generic import TemplateView
+
 
 from app_main.views import main_page_view, prof_train_search
 from sitemap import (CategoryProfDevSitemap, CategoryProfRetrainSitemap, CategoryProfTrainSitemap,
@@ -60,8 +62,10 @@ urlpatterns = [
     path('about-us/', include('app_about_us.urls')),
     path('news/', include('app_news.urls')),
     path('search/prof-train/', prof_train_search, name='prof_train_search'),
+    path('tutors/', include('app_tutor.urls')),
 
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
 ]
 
 

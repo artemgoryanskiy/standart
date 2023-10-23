@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@@ojv&zi--4^ope3e8tx5wxag!1#b0so*m=)_6x2o66h^0q%a2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['www.standart82.ru', 'standart82.ru', '62.113.111.66',]
+ALLOWED_HOSTS = ['www.standart82.ru', 'standart82.ru', '62.113.111.66']
 
 
 # Application definition
@@ -50,10 +50,16 @@ INSTALLED_APPS = [
     'app_lab_prot.apps.AppLabProtConfig',
     'app_about_us.apps.AppAboutUsConfig',
     'app_fire_safety.apps.AppFireSafetyConfig',
+    'app_tutor.apps.AppTutorConfig',
 
     # 3-d apps
     'debug_toolbar',
+    'crispy_forms',
+    'crispy_bootstrap5'
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 SITE_ID = 1
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

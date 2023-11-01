@@ -11,7 +11,7 @@ def news_list_view(request):
     paginator = Paginator(news, 8)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'news_templates/news_grid.html', context={'news': news, 'page_obj': page_obj, })
+    return render(request, 'news_templates/news_grid.html', context={'news': news, 'page_obj': page_obj,})
 
 
 def news_detail_view(request: HttpRequest, slug) -> HttpResponse:

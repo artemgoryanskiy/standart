@@ -23,4 +23,4 @@ def education_prof_train_course_view(request, category_slug):
     category = get_object_or_404(CategoryProfTrain, slug=category_slug)
     programs = ProgramProfTrain.objects.select_related('category').filter(category=category)
     context = {'category': category, 'programs': programs}
-    return render(request, 'education_templates/education_prof_retr_detail.html', context=context)
+    return render(request, 'education_templates/education_prof_train_detail.html', context=context)

@@ -42,7 +42,7 @@ class ProgramProfTrain(models.Model):
     title = models.CharField(max_length=200)
     class_num = models.CharField(max_length=50)
     document = MultiSelectField(max_length=200, blank=True, null=True, choices=DOCUMENTS)
-    hours = models.CharField(max_length=10, null=True, blank=True)
+    hours = models.CharField(max_length=50, null=True, blank=True)
     slug = models.SlugField(null=False, max_length=100)
     category = models.ForeignKey(CategoryProfTrain, on_delete=models.CASCADE, default=1, related_name='programs')
 

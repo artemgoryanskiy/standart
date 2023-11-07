@@ -3,7 +3,7 @@ from .models import CategoryProfRetrain, ProgramProfRetrain
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'title', 'body', 'rate', 'slug', 'image',)
+    list_display = ('pk', 'title', 'body', 'short_desc', 'audience_category', 'purpose', 'rate', 'slug', 'image',)
     prepopulated_fields = {'slug': ('title',)}
 
 

@@ -7,6 +7,9 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 class CategoryProfRetrain(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField(null=True, blank=True)
+    short_desc = models.TextField(null=True, blank=True)
+    audience_category = models.TextField(null=True, blank=True)
+    purpose = models.TextField(null=True, blank=True)
     slug = models.SlugField(unique=True, null=False)
     image = models.ImageField(upload_to='prof_retr/category_img/', blank=True, null=True)
     rate = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True,

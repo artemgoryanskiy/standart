@@ -1,6 +1,6 @@
 {% extends 'index.html' %}
 {% block metrica %}
-    <!-- Yandex.Metrika counter -->
+    <!-- Yandex.Metrika counter HHHH-->
     <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () {
@@ -112,7 +112,7 @@
                             {% if programs_po %}
                                 {% for elem in programs_po %}
                                     <ul>
-                                        <li><a href="{% url 'app_prof_training:prof_train_course' elem.category.slug %}"
+                                        <li><a href="{% url 'prof_train_course' elem.category.slug %}"
                                                class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">{{ elem.title }}
                                             входит в категорию <span
                                                     class="fw-bold">{{ elem.category.title }}</span></a>
@@ -123,7 +123,7 @@
                             {% if programs_pk %}
                                 {% for elem in programs_pk %}
                                     <ul>
-                                        <li><a href="{% url 'app_prof_dev:prof_dev_course' elem.category.slug %}"
+                                        <li><a href="{% url 'prof_dev_course' elem.category.slug %}"
                                                class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">{{ elem.title }}
                                             входит в категорию <span
                                                     class="fw-bold">{{ elem.category.title }}</span></a>
@@ -134,7 +134,7 @@
                             {% if programs_pp %}
                                 {% for elem in programs_pp %}
                                     <ul>
-                                        <li><a href="{% url 'app_prof_retraining:prof_retr_course' elem.category.slug %}"
+                                        <li><a href="{% url 'prof_retr_course' elem.category.slug %}"
                                                class="link-secondary link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover">{{ elem.title }}
                                             входит в категорию <span
                                                     class="fw-bold">{{ elem.category.title }}</span></a>
